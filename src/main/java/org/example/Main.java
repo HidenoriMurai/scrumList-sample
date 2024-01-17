@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,5 +37,22 @@ public class Main {
             }
         }
         System.out.println("---------------------------------------------");
+
+        //Mapを使用してキーと値を実装する
+        System.out.println("各スクラムのSMをキーと値で紐付ける");
+        Map<String, String> scrumMaster = new HashMap<>();
+        scrumMaster.put("ゴールド", "田中");
+        scrumMaster.put("ルビー", "山田");
+        scrumMaster.put("シルバー", "佐藤");
+        scrumMaster.put("サファイア", "山口");
+        scrumMaster.put("ダイアモンド", "武田");
+
+        for (Map.Entry<String, String> scrumMasterData : scrumMaster.entrySet()) {
+            if (scrumMasterData.getKey() != null) {
+                System.out.println(scrumMasterData.getKey() + "のスクラムマスター：" + scrumMasterData.getValue());
+            } else {
+                System.out.println("存在しないスクラムチームがあります。");
+            }
+        }
     }
 }
